@@ -10,16 +10,16 @@ print(df.shape)
 
 
 #数据预处理,把数据存放到trasactions中
-trasactions = []
+transactions = []
 for i in range(0,df.shape[0]):
     temp=[]
     for j in range(0,df.shape[1]):
         if str(df.values[i,j])!='nan':
            temp.append(str(df.values[i,j]))
-    trasactions.append(temp)
-print(trasactions)
+    transactions.append(temp)
+print(transactions)
 
-itemsets, rules = apriori(trasactions,min_support=0.02,min_confidence=0.3)
+itemsets, rules = apriori(transactions,min_support=0.02,min_confidence=0.3)
 print('频繁项集：',itemsets)
 print('关联规则：',rules)
 
